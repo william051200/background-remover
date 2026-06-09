@@ -4,6 +4,8 @@ A simple, private, browser-based app to remove the background from an image.
 All processing happens **locally in your browser** — no uploads, no server, no
 account, no quota.
 
+🔗 **Live demo:** https://william051200.github.io/background-remover/
+
 ## How it works
 
 Two removal modes:
@@ -44,3 +46,14 @@ npm run preview  # preview the production build
 - The first run is slower because the model is downloaded; later runs use the cache.
 - License: `@imgly/background-removal` is AGPL-3.0. Fine for personal/hobby use;
   a commercial license from img.ly is required for closed-source commercial products.
+
+## Deployment
+
+This repo auto-deploys to **GitHub Pages** on every push to `main` via the
+workflow in `.github/workflows/deploy.yml` (build with Vite → publish `dist/`).
+
+The Vite `base` is set to `/background-remover/` in `vite.config.js` to match the
+GitHub Pages project URL. If you fork/rename the repo, update `base` accordingly.
+
+It is a fully static site, so it can also be hosted for free on Netlify, Vercel,
+or Cloudflare Pages (build command `npm run build`, output directory `dist`).
